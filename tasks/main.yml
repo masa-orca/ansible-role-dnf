@@ -1,0 +1,12 @@
+---
+- name: Collect facts
+  become: true
+  ansible.builtin.setup:
+
+- name: Set values to dnf.conf
+  become: true
+  community.general.ini_file:
+    path: /etc/dnf/dnf.conf
+  loop: "{{ dnf_ini_values }}"
+  when:
+    - ansible_pkg_mgr == "dnf"

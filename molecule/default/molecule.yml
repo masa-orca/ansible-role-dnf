@@ -1,0 +1,16 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: rocky8
+    image: rockylinux:8
+  - name: rocky9
+    image: rockylinux:9
+provisioner:
+  name: ansible
+  playbooks:
+    prepare: ../playbooks/prepare.yml
+verifier:
+  name: ansible
