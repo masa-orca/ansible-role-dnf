@@ -10,6 +10,7 @@
     section: "{{ item.section | default(omit) }}"
     option: "{{ item.option | default(omit) }}"
     values: "{{ item.values | default(omit) }}"
+    state: "{{ item.state | default(omit) }}"
   loop: "{{ dnf_ini_values }}"
   when:
     - ansible_pkg_mgr == "dnf"
