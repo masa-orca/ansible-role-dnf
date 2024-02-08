@@ -1,6 +1,0 @@
----
-- name: Prepare
-  hosts: all
-  tasks:
-    - name: Run apt update
-      ansible.builtin.command: ansible-galaxy collection install community.general
